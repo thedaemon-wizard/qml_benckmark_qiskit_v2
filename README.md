@@ -97,13 +97,13 @@ QiskitRuntimeService.save_account(
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/quantum-ml-benchmark.git
-cd quantum-ml-benchmark
+git clone https://github.com/yourusername/qml_benckmark_qiskit_v2.git
+cd qml_benckmark_qiskit_v2
 ```
 
 2. Launch Jupyter Notebook:
 ```bash
-jupyter notebook quantum_ml_comparison.ipynb
+jupyter notebook QML_benchmark.ipynb.ipynb
 ```
 
 3. Run cells sequentially to reproduce the experiments
@@ -205,9 +205,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - NVIDIA for cuQuantum SDK support
 - The Qiskit community for extensive documentation and examples
 
-## 📧 Contact
 
-For questions or collaborations, please open an issue or contact: your.email@example.com
 
 ---
 
