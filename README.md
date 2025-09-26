@@ -1,214 +1,181 @@
-# Quantum Machine Learning Algorithms Benchmark
+# Quantum Machine Learning Benchmark Suite
+
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
+[![Qiskit](https://img.shields.io/badge/Qiskit-1.0%2B-purple.svg)](https://qiskit.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+A comprehensive benchmarking framework for comparing various Quantum Machine Learning (QML) algorithms across different quantum computing platforms and backends.
 
 ## 📊 Overview
 
-This repository contains a comprehensive benchmark study comparing various Quantum Machine Learning (QML) algorithms across different quantum computing platforms. The study evaluates both computational performance and accuracy metrics to provide insights into the practical applicability of quantum algorithms in machine learning tasks.
+This notebook provides an extensive comparison of six quantum machine learning algorithms, evaluating their performance in terms of computation time and accuracy across multiple quantum computing backends. The implementation includes parallel execution support, GPU acceleration, and noise-resilient optimizers.
 
-## 🎯 Objectives
+## 🚀 Features
 
-- Compare the performance of six major quantum machine learning algorithms
-- Evaluate execution time across different quantum computing backends
-- Analyze accuracy metrics for classification and generative tasks
-- Provide reproducible benchmarks for the quantum computing community
+### Quantum Algorithms Implemented
+- **VQC (Variational Quantum Classifier)** - Hybrid quantum-classical classifier with parallel batch execution
+- **QSVM (Quantum Support Vector Machine)** - Quantum kernel-based SVM with parallel kernel computation
+- **QNN (Quantum Neural Network)** - Quantum neural network with SPSA optimizer for noise resilience
+- **QCNN (Quantum Convolutional Neural Network)** - Fixed-qubit quantum CNN implementation
+- **QRNN (Quantum Recurrent Neural Network)** - Fixed-qubit quantum RNN for sequential data
+- **QGAN (Quantum Generative Adversarial Network)** - Quantum GAN for generative tasks
 
-## 🧬 Algorithms Evaluated
+### Supported Backends
+- **Qiskit Simulator** - CPU-based quantum circuit simulation
+- **cuQuantum** - GPU-accelerated quantum simulation using NVIDIA cuQuantum
+- **IBM Quantum Platform** - Real quantum hardware execution (optional, requires API token)
 
-### 1. **VQC (Variational Quantum Classifier)**
-A hybrid quantum-classical algorithm for classification tasks using parameterized quantum circuits optimized through classical optimization.
+### Key Features
+- ✅ **Parallel Execution** - Efficient batch processing with multiprocessing support
+- ✅ **GPU Acceleration** - CUDA support via cuQuantum for faster simulations
+- ✅ **Training Progress Monitoring** - Real-time training callbacks and progress tracking
+- ✅ **SPSA Optimizer** - Noise-resilient optimization for quantum hardware
+- ✅ **Fixed Qubit Implementation** - Optimized quantum circuits with controlled qubit usage
+- ✅ **Comprehensive Visualization** - Performance metrics and comparison charts
 
-### 2. **QSVM (Quantum Support Vector Machine)**
-Quantum-enhanced version of classical SVM leveraging quantum kernel methods for potentially exponential speedup in feature mapping.
-
-### 3. **QNN (Quantum Neural Network)**
-Quantum analog of classical neural networks using quantum circuits as layers with trainable parameters.
-
-### 4. **QCNN (Quantum Convolutional Neural Network)**
-Quantum implementation of convolutional neural networks designed for processing quantum data with translation invariance.
-
-### 5. **QRNN (Quantum Recurrent Neural Network)**
-Quantum version of RNNs for sequential data processing with quantum memory cells.
-
-### 6. **QGAN (Quantum Generative Adversarial Network)**
-Quantum implementation of GANs with quantum generators and/or discriminators for data generation tasks.
-
-## 🖥️ Computing Platforms
-
-### Qiskit Simulator
-- **Type**: Classical simulation
-- **Provider**: IBM Quantum
-- **Use Case**: Development, testing, and small-scale experiments
-- **Advantages**: No queue time, perfect gates, unlimited shots
-
-### cuQuantum
-- **Type**: GPU-accelerated quantum simulation
-- **Provider**: NVIDIA
-- **Use Case**: Large-scale quantum circuit simulation
-- **Advantages**: High-performance computing, scalable to more qubits
-
-### IBM Quantum Platform
-- **Type**: Real quantum hardware
-- **Provider**: IBM
-- **Use Case**: Real quantum computing experiments
-- **Advantages**: Actual quantum effects, hardware benchmarking
-
-## 📈 Performance Metrics
-
-### Computation Time
-- Wall clock time for circuit execution
-- Queue time (for IBM Quantum hardware)
-- Optimization convergence time
-- Total end-to-end execution time
-
-### Accuracy Metrics
-- Classification accuracy (for VQC, QSVM, QNN, QCNN)
-- Loss convergence curves
-- Fidelity measures
-- Generator quality metrics (for QGAN)
-
-## 🚀 Getting Started
+## 🛠️ Installation
 
 ### Prerequisites
+- Python 3.8 or higher
+- CUDA-capable GPU (recommended for cuQuantum backend)
+- IBM Quantum account (optional, for hardware execution)
 
-```bash
-# Python 3.8 or higher required
-python --version
+### Setup Instructions
 
-# Install required packages
-pip install qiskit qiskit-machine-learning
-pip install qiskit-aer-gpu  # For GPU support
-pip install cuquantum-python  # For NVIDIA cuQuantum
-pip install matplotlib numpy pandas scipy
-pip install jupyter notebook
-```
-
-### IBM Quantum Account Setup
-
-```python
-from qiskit_ibm_runtime import QiskitRuntimeService
-
-# Save your IBM Quantum credentials
-QiskitRuntimeService.save_account(
-    channel="ibm_quantum",
-    token="YOUR_IBM_QUANTUM_TOKEN"
-)
-```
-
-### Running the Notebook
-
-1. Clone the repository:
+1. **Clone the repository**
 ```bash
 git clone https://github.com/yourusername/qml_benckmark_qiskit_v2.git
 cd qml_benckmark_qiskit_v2
 ```
 
-2. Launch Jupyter Notebook:
+2. **Enable GPU Runtime (for Google Colab)**
+   - Go to Runtime → Change runtime type
+   - Select GPU as Hardware accelerator (T4 recommended)
+   - Click Save
+
+3. **Install dependencies**
 ```bash
-jupyter notebook QML_benchmark.ipynb.ipynb
+pip install -q qiskit qiskit-machine-learning qiskit-ibm-runtime qiskit-aer
+pip install -q qiskit-aer-gpu  # For GPU support
+pip install -q torch torchvision scikit-learn matplotlib pylatexenc
 ```
 
-3. Run cells sequentially to reproduce the experiments
+## 📝 Usage
 
-## 📊 Results Summary
+### Basic Usage
 
-### Execution Time Comparison
+Open and run the `QML_benchmark.ipynb` notebook in Jupyter or Google Colab:
 
-| Algorithm | Qiskit Simulator | cuQuantum | IBM Quantum |
-|-----------|-----------------|-----------|-------------|
-| VQC       | Baseline        | ~3-5x faster | Variable (queue dependent) |
-| QSVM      | Baseline        | ~2-4x faster | Limited by coherence |
-| QNN       | Baseline        | ~4-6x faster | Hardware noise impact |
-| QCNN      | Baseline        | ~5-8x faster | Circuit depth limitations |
-| QRNN      | Baseline        | ~3-5x faster | Sequential execution overhead |
-| QGAN      | Baseline        | ~4-7x faster | Noise affects training |
-
-### Accuracy Performance
-
-| Algorithm | Task Type | Best Platform | Peak Accuracy |
-|-----------|-----------|---------------|---------------|
-| VQC       | Binary Classification | Simulator | ~95% |
-| QSVM      | Multi-class Classification | cuQuantum | ~92% |
-| QNN       | Pattern Recognition | Simulator | ~89% |
-| QCNN      | Image Classification | cuQuantum | ~87% |
-| QRNN      | Sequence Prediction | Simulator | ~85% |
-| QGAN      | Data Generation | cuQuantum | ~0.82 (Fidelity) |
-
-## 🔧 Configuration
-
-### Circuit Parameters
-- Number of qubits: 4-16 (depending on algorithm)
-- Circuit depth: Optimized per algorithm
-- Number of shots: 1024 (simulator), 8192 (hardware)
-- Optimization iterations: 100-500
-
-### Dataset Information
-- Binary classification: Iris dataset (reduced)
-- Multi-class: Wine dataset (PCA reduced)
-- Image data: MNIST (downsampled)
-- Sequential data: Custom synthetic dataset
-
-## 📁 Repository Structure(IN Progress)
-
-```
-quantum-ml-benchmark/
-│
-├── quantum_ml_comparison.ipynb  # Main benchmark notebook
-├── README.md                     # This file
-├── requirements.txt              # Python dependencies
-├── results/                      # Benchmark results
-│   ├── execution_times.csv      
-│   ├── accuracy_metrics.csv     
-│   └── figures/                  # Visualization plots
-├── utils/                        # Helper functions
-│   ├── quantum_circuits.py      
-│   ├── data_preprocessing.py    
-│   └── visualization.py         
-└── configs/                      # Configuration files
-    ├── algorithm_params.json     
-    └── platform_settings.json    
+```python
+jupyter notebook QML_benchmark.ipynb
 ```
 
-## 📝 Key Findings
+### Configuration
 
-1. **Performance Trade-offs**: cuQuantum provides the best balance between speed and accuracy for most algorithms
-2. **Hardware Limitations**: Current NISQ devices show significant performance degradation for deep circuits
-3. **Algorithm Suitability**: VQC and QSVM show the most promise for near-term applications
-4. **Scaling Challenges**: Circuit depth and qubit connectivity remain primary bottlenecks
+The notebook includes a configuration section where you can customize:
+
+```python
+CONFIG = {
+    'n_qubits': 4,           # Number of qubits
+    'n_samples': 100,        # Dataset size
+    'max_iterations': 20,    # Training iterations
+    'batch_size': 10,        # Batch size for parallel execution
+    'use_gpu': True,         # Enable GPU acceleration
+    'ibm_token': '',         # IBM Quantum API token (optional)
+}
+```
+
+### Running Specific Models
+
+You can run individual models or the complete benchmark suite:
+
+```python
+# Initialize the quantum models
+qm = QuantumModels(backend_type='gpu', config=CONFIG)
+
+# Run individual model
+results_vqc = qm.train_vqc()
+
+# Run all models
+all_results = qm.run_all_models()
+```
+
+## 📈 Benchmark Results
+
+The notebook generates comprehensive performance metrics including:
+
+- **Accuracy Comparison** - Classification accuracy across all models and backends
+- **Runtime Analysis** - Training and inference time measurements
+- **Resource Utilization** - Memory usage and computational requirements
+- **Convergence Plots** - Training loss and accuracy evolution
+
+
+## 🏗️ Architecture
+
+### Notebook Structure
+
+1. **Environment Setup** - GPU detection and system information
+2. **Dependencies Installation** - Required packages and libraries
+3. **Library Imports** - Quantum and classical ML libraries
+4. **Configuration** - Hyperparameters and settings
+5. **Data Preparation** - Dataset loading and preprocessing
+6. **Backend Setup** - Initialize quantum simulators and hardware
+7. **Model Implementations** - Quantum ML algorithm classes
+8. **Benchmark Execution** - Run models across all backends
+9. **Results Visualization** - Performance plots and comparisons
+10. **Summary & Conclusions** - Key findings and recommendations
+
+### Key Components
+
+- **Parallel Execution Engine** - Multiprocessing-based batch processing
+- **Backend Manager** - Handles simulator/hardware initialization
+- **Progress Callbacks** - Real-time training monitoring
+- **Performance Metrics** - Accuracy, time, and resource tracking
+
+## 🔬 Technical Details
+
+### Quantum Circuit Design
+- **Encoding**: Angle encoding for classical data representation
+- **Ansatz**: Hardware-efficient ansatz with entangling layers
+- **Measurements**: Pauli-Z basis measurements
+- **Optimization**: Gradient-free SPSA optimizer
+
+### Performance Optimizations
+- Batch processing for parallel quantum circuit execution
+- GPU acceleration via cuQuantum for large-scale simulations
+- Circuit optimization and transpilation for hardware execution
+- Memory-efficient data handling for large datasets
+
+## 📊 Visualization Examples
+
+The notebook generates various visualizations:
+- Model accuracy comparison bar charts
+- Runtime performance heatmaps
+- Training convergence plots
+- Backend performance comparisons
 
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit pull requests or open issues for:
-- Additional quantum algorithms
-- New benchmark datasets
+- New quantum ML algorithms
+- Additional backend support
 - Performance optimizations
-- Bug fixes
+- Bug fixes and improvements
+
+## 📚 References
+
+- [Qiskit Documentation](https://qiskit.org/documentation/)
+- [Qiskit Machine Learning](https://qiskit.org/ecosystem/machine-learning/)
+- [cuQuantum SDK](https://developer.nvidia.com/cuquantum-sdk)
+- [IBM Quantum Network](https://quantum-computing.ibm.com/)
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📚 References
+## ✨ Acknowledgments
 
-1. Cerezo, M., et al. (2021). "Variational quantum algorithms." Nature Reviews Physics.
-2. Havlíček, V., et al. (2019). "Supervised learning with quantum-enhanced feature spaces." Nature.
-3. Farhi, E., & Neven, H. (2018). "Classification with quantum neural networks on near term processors." arXiv preprint.
-4. Cong, I., et al. (2019). "Quantum convolutional neural networks." Nature Physics.
-5. Bausch, J. (2020). "Recurrent quantum neural networks." NeurIPS.
-6. Lloyd, S., & Weedbrook, C. (2018). "Quantum generative adversarial learning." Physical Review Letters.
+- IBM Quantum team for Qiskit framework
+- NVIDIA for cuQuantum GPU acceleration
+- The quantum computing community for continuous support
 
-## 👥 Authors
-
-- Your Name - *Initial work* - [YourGitHub](https://github.com/yourusername)
-
-## 🙏 Acknowledgments
-
-- IBM Quantum Network for providing cloud access to quantum hardware
-- NVIDIA for cuQuantum SDK support
-- The Qiskit community for extensive documentation and examples
-
-
-
----
-
-**Last Updated**: [Current Date]
-
-**Status**: 🟢 Active Development
