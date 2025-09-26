@@ -1,6 +1,15 @@
+<table>
+	<thead>
+    	<tr>
+      		<th style="text-align:center">English</th>
+      		<th style="text-align:center"><a href="README_ja.md">日本語</a></th>
+    	</tr>
+  	</thead>
+</table>
+
 # Quantum Machine Learning Benchmark Suite
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.12%2B-blue.svg)](https://www.python.org/)
 [![Qiskit](https://img.shields.io/badge/Qiskit-1.0%2B-purple.svg)](https://qiskit.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
@@ -36,7 +45,7 @@ This notebook provides an extensive comparison of six quantum machine learning a
 ## 🛠️ Installation
 
 ### Prerequisites
-- Python 3.8 or higher
+- Python 3.12 or higher
 - CUDA-capable GPU (recommended for cuQuantum backend)
 - IBM Quantum account (optional, for hardware execution)
 
