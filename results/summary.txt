@@ -1,0 +1,21 @@
+             Backend Model Accuracy Training Time (s) Iterations Final Loss
+                 cpu   VQC    0.500             11.25         48        N/A
+                 cpu  QSVM    0.850              9.38        N/A        N/A
+                 cpu   QNN    0.450              0.72          6        N/A
+                 cpu  QCNN    0.225              0.43          3        N/A
+                 cpu  QRNN    0.275              0.50          3        N/A
+                 cpu  QGAN    0.789             19.15        N/A     0.8170
+                 gpu   VQC    0.825             18.13         48        N/A
+                 gpu  QSVM    0.875             23.67        N/A        N/A
+                 gpu   QNN    0.275              2.67          6        N/A
+                 gpu  QCNN    0.275              2.00          3        N/A
+                 gpu  QRNN    0.250              1.77          3        N/A
+                 gpu  QGAN    0.740             27.51        N/A     1.0945
+ibm_quantum_platform   VQC    0.600             57.91          1        N/A
+ibm_quantum_platform  QSVM    0.675             42.93        N/A        N/A
+ibm_quantum_platform   QNN      N/A               N/A        N/A        N/A
+ibm_quantum_platform  QCNN      N/A               N/A        N/A        N/A
+ibm_quantum_platform  QRNN      N/A               N/A        N/A        N/A
+ibm_quantum_platform  QGAN      N/A               N/A        N/A        N/A
+
+Note: for QGAN, 'Accuracy' is the generation-quality score = 1 - TVD(generated, target) in [0,1] (higher is better); see quality_score / tvd / kl_divergence in quantum_ml_results.json.
