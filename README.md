@@ -194,9 +194,11 @@ distribution), in `[0,1]`, higher = better — directly comparable to the classi
 
 > **GPU is slower than CPU at this scale.** All models use only **2–4 qubits**, where GPU
 > kernel-launch overhead dominates (GPU speedups here are 0.2–0.7×). The GPU only wins for large
-> state vectors: an independent 24-qubit `efficient_su2` circuit runs **~2.4× faster on the GPU**
-> (0.33 s vs 0.81 s). This benchmark is intentionally small; increase `num_qubits` to see the GPU
-> advantage.
+> state vectors: an independent 24-qubit `efficient_su2` circuit (statevector, 256 shots, 5-run
+> median after warm-up, measured on this machine) runs in **~0.04 s on the GPU vs ~0.84 s on the
+> CPU — ~21× faster**. (The very first GPU call is ~0.3 s because of one-time cuStateVec/CUDA
+> initialization, which is why the tiny per-call circuits in the benchmark above don't benefit.)
+> This benchmark is intentionally small; increase `num_qubits` to see the GPU advantage.
 
 ### IBM Quantum real hardware
 
