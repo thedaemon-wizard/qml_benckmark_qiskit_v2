@@ -1,0 +1,179 @@
+2026-06-19 23:51:28 [INFO] All libraries imported successfully!
+2026-06-19 23:51:28 [INFO] Qiskit version: 2.4.2
+2026-06-19 23:51:28 [INFO] PyTorch version: 2.11.0+cu128
+2026-06-19 23:51:28 [INFO] CUDA available: True
+2026-06-19 23:51:28 [INFO] CUDA version: 12.8
+2026-06-19 23:51:29 [INFO] GPU device: NVIDIA RTX PRO 6000 Blackwell Workstation Edition
+2026-06-19 23:51:29 [INFO] Results directory: /home/a-koike/dev/github/benchmark_qiskit_v2_ml/qml_benckmark_qiskit_v2/results
+2026-06-19 23:51:29 [INFO] Loaded IBM Quantum credentials from ../apikey.json
+2026-06-19 23:51:29 [INFO] Configuration:
+2026-06-19 23:51:29 [INFO]   GPU Available: True
+2026-06-19 23:51:29 [INFO]   CUDA Version: 12.8
+2026-06-19 23:51:29 [INFO]   Feature Dimension: 2
+2026-06-19 23:51:29 [INFO]   Fixed Qubit Number: 2
+2026-06-19 23:51:29 [INFO]   Training Size: 80
+2026-06-19 23:51:29 [INFO]   Test Size: 20
+2026-06-19 23:51:29 [INFO]   Batch Size: 20
+2026-06-19 23:51:29 [INFO]   Max Iterations: 6
+2026-06-19 23:51:29 [INFO]   Parallel Jobs: 4
+2026-06-19 23:51:29 [INFO]   IBM credentials loaded: True
+2026-06-19 23:51:29 [INFO] Data prepared:
+2026-06-19 23:51:29 [INFO]   Training samples: 80
+2026-06-19 23:51:29 [INFO]   Test samples: 20
+2026-06-19 23:51:29 [INFO]   Features: 2
+2026-06-19 23:51:29 [INFO]   Classes: 2
+2026-06-19 23:51:29 [INFO] Saved figure: results/dataset_distribution.png
+2026-06-19 23:51:32 [INFO] IBM Quantum connected. Available backends: ['ibm_fez', 'ibm_marrakesh', 'ibm_kingston']
+2026-06-19 23:51:32 [INFO] Testing backend setup...
+2026-06-19 23:51:32 [INFO] CPU backend initialized with 4 parallel jobs
+2026-06-19 23:51:32 [INFO]   AerSimulator('aer_simulator_statevector')
+2026-06-19 23:51:32 [INFO] cuStateVec GPU backend initialized successfully
+2026-06-19 23:51:32 [INFO]   AerSimulator('aer_simulator_statevector_gpu')
+2026-06-19 23:51:32 [INFO] Training progress callback initialized
+2026-06-19 23:51:32 [INFO] Creating QuantumModels instance...
+2026-06-19 23:51:32 [INFO] CPU backend initialized with 4 parallel jobs
+2026-06-19 23:51:32 [INFO] Instance created successfully!
+2026-06-19 23:51:32 [INFO] Backend selection overridden via QML_BACKENDS='cpu,gpu,ibm_quantum_platform'
+2026-06-19 23:51:32 [INFO] Backends to test: ['cpu', 'gpu', 'ibm_quantum_platform']
+2026-06-19 23:51:32 [INFO] Start time: 2026-06-19 23:51:32
+2026-06-19 23:51:32 [INFO] ============================================================
+2026-06-19 23:51:32 [INFO] Testing on CPU backend
+2026-06-19 23:51:32 [INFO] ============================================================
+2026-06-19 23:51:32 [INFO] CPU backend initialized with 4 parallel jobs
+2026-06-19 23:51:32 [INFO] === Training VQC on cpu ===
+2026-06-19 23:51:32 [INFO] Training with 8 batches of size 20
+2026-06-19 23:51:32 [INFO] Processing batch 1/8
+2026-06-19 23:51:33 [INFO] [VQC@cpu] Iteration 5: Loss = 1.1587, Time = 1.37s
+2026-06-19 23:51:34 [INFO] Processing batch 2/8
+2026-06-19 23:51:35 [INFO] [VQC@cpu] Iteration 10: Loss = 0.6191, Time = 2.67s
+2026-06-19 23:51:35 [INFO] Processing batch 3/8
+2026-06-19 23:51:36 [INFO] [VQC@cpu] Iteration 15: Loss = 0.8390, Time = 4.01s
+2026-06-19 23:51:36 [INFO] Processing batch 4/8
+2026-06-19 23:51:37 [INFO] [VQC@cpu] Iteration 20: Loss = 0.8681, Time = 5.35s
+2026-06-19 23:51:38 [INFO] Processing batch 5/8
+2026-06-19 23:51:39 [INFO] [VQC@cpu] Iteration 25: Loss = 0.8865, Time = 6.74s
+2026-06-19 23:51:39 [INFO] [VQC@cpu] Iteration 30: Loss = 0.5186, Time = 7.05s
+2026-06-19 23:51:39 [INFO] Processing batch 6/8
+2026-06-19 23:51:40 [INFO] [VQC@cpu] Iteration 35: Loss = 0.4135, Time = 8.36s
+2026-06-19 23:51:41 [INFO] Processing batch 7/8
+2026-06-19 23:51:42 [INFO] [VQC@cpu] Iteration 40: Loss = 0.4636, Time = 9.70s
+2026-06-19 23:51:42 [INFO] Processing batch 8/8
+2026-06-19 23:51:43 [INFO] [VQC@cpu] Iteration 45: Loss = 1.1879, Time = 11.07s
+2026-06-19 23:51:43 [INFO] VQC Accuracy: 0.500, Time: 11.25s
+2026-06-19 23:51:44 [INFO] Saved figure: results/vqc_circuit_cpu.png
+2026-06-19 23:51:44 [INFO] === Training QSVM on cpu ===
+2026-06-19 23:51:58 [INFO] QSVM Accuracy: 0.850, Time: 9.38s
+2026-06-19 23:51:58 [INFO] === Training QNN on cpu ===
+2026-06-19 23:51:58 [INFO] [QNN@cpu] Iteration 5: Loss = 0.3502, Time = 0.68s
+2026-06-19 23:51:59 [INFO] QNN Accuracy: 0.450, Time: 0.72s
+2026-06-19 23:51:59 [INFO] === Training QCNN on cpu ===
+2026-06-19 23:51:59 [INFO] QCNN Accuracy: 0.225, Time: 0.43s
+2026-06-19 23:51:59 [INFO] Saved figure: results/qcnn_circuit_cpu.png
+2026-06-19 23:51:59 [INFO] === Training QRNN on cpu ===
+2026-06-19 23:52:00 [INFO] QRNN Accuracy: 0.275, Time: 0.50s
+2026-06-19 23:52:00 [INFO] Saved figure: results/qrnn_circuit_cpu.png
+2026-06-19 23:52:00 [INFO] === Training QGAN on cpu ===
+2026-06-19 23:52:01 [INFO] [QGAN@cpu] Epoch 0: Gen Loss = 0.6558, Disc Loss = 1.3933, Time = 1.10s
+2026-06-19 23:52:06 [INFO] [QGAN@cpu] Epoch 5: Gen Loss = 0.7200, Disc Loss = 1.3779, Time = 5.88s
+2026-06-19 23:52:11 [INFO] [QGAN@cpu] Epoch 10: Gen Loss = 0.7383, Disc Loss = 1.3574, Time = 10.50s
+2026-06-19 23:52:16 [INFO] [QGAN@cpu] Epoch 15: Gen Loss = 0.7314, Disc Loss = 1.3308, Time = 15.27s
+2026-06-19 23:52:19 [INFO] QGAN Generation Quality (1-TVD): 0.789 (TVD=0.211, KL=0.127); Final Loss: 0.8170, Time: 19.15s
+2026-06-19 23:52:20 [INFO] Saved figure: results/qgan_training_cpu.png
+2026-06-19 23:52:20 [INFO] ============================================================
+2026-06-19 23:52:20 [INFO] Testing on GPU backend
+2026-06-19 23:52:20 [INFO] ============================================================
+2026-06-19 23:52:20 [INFO] cuStateVec GPU backend initialized successfully
+2026-06-19 23:52:20 [INFO] === Training VQC on gpu ===
+2026-06-19 23:52:20 [INFO] Training with 8 batches of size 20
+2026-06-19 23:52:20 [INFO] Processing batch 1/8
+2026-06-19 23:52:22 [INFO] [VQC@gpu] Iteration 5: Loss = 0.6091, Time = 2.31s
+2026-06-19 23:52:22 [INFO] Processing batch 2/8
+2026-06-19 23:52:24 [INFO] [VQC@gpu] Iteration 10: Loss = 0.7066, Time = 4.43s
+2026-06-19 23:52:24 [INFO] Processing batch 3/8
+2026-06-19 23:52:26 [INFO] [VQC@gpu] Iteration 15: Loss = 0.7036, Time = 6.54s
+2026-06-19 23:52:27 [INFO] Processing batch 4/8
+2026-06-19 23:52:28 [INFO] [VQC@gpu] Iteration 20: Loss = 1.5478, Time = 8.81s
+2026-06-19 23:52:29 [INFO] Processing batch 5/8
+2026-06-19 23:52:31 [INFO] [VQC@gpu] Iteration 25: Loss = 1.9603, Time = 10.94s
+2026-06-19 23:52:31 [INFO] [VQC@gpu] Iteration 30: Loss = 0.6517, Time = 11.44s
+2026-06-19 23:52:31 [INFO] Processing batch 6/8
+2026-06-19 23:52:33 [INFO] [VQC@gpu] Iteration 35: Loss = 0.6447, Time = 13.54s
+2026-06-19 23:52:33 [INFO] Processing batch 7/8
+2026-06-19 23:52:35 [INFO] [VQC@gpu] Iteration 40: Loss = 0.7166, Time = 15.67s
+2026-06-19 23:52:36 [INFO] Processing batch 8/8
+2026-06-19 23:52:38 [INFO] [VQC@gpu] Iteration 45: Loss = 1.0893, Time = 17.83s
+2026-06-19 23:52:38 [INFO] VQC Accuracy: 0.825, Time: 18.13s
+2026-06-19 23:52:38 [INFO] Saved figure: results/vqc_circuit_gpu.png
+2026-06-19 23:52:38 [INFO] === Training QSVM on gpu ===
+2026-06-19 23:53:13 [INFO] QSVM Accuracy: 0.875, Time: 23.67s
+2026-06-19 23:53:13 [INFO] === Training QNN on gpu ===
+2026-06-19 23:53:16 [INFO] [QNN@gpu] Iteration 5: Loss = 0.4771, Time = 2.56s
+2026-06-19 23:53:16 [INFO] QNN Accuracy: 0.275, Time: 2.67s
+2026-06-19 23:53:16 [INFO] === Training QCNN on gpu ===
+2026-06-19 23:53:18 [INFO] QCNN Accuracy: 0.275, Time: 2.00s
+2026-06-19 23:53:18 [INFO] Saved figure: results/qcnn_circuit_gpu.png
+2026-06-19 23:53:18 [INFO] === Training QRNN on gpu ===
+2026-06-19 23:53:20 [INFO] QRNN Accuracy: 0.250, Time: 1.77s
+2026-06-19 23:53:20 [INFO] Saved figure: results/qrnn_circuit_gpu.png
+2026-06-19 23:53:20 [INFO] === Training QGAN on gpu ===
+2026-06-19 23:53:22 [INFO] [QGAN@gpu] Epoch 0: Gen Loss = 0.6799, Disc Loss = 1.3857, Time = 1.52s
+2026-06-19 23:53:28 [INFO] [QGAN@gpu] Epoch 5: Gen Loss = 0.7172, Disc Loss = 1.3566, Time = 8.32s
+2026-06-19 23:53:35 [INFO] [QGAN@gpu] Epoch 10: Gen Loss = 0.7172, Disc Loss = 1.3120, Time = 15.19s
+2026-06-19 23:53:42 [INFO] [QGAN@gpu] Epoch 15: Gen Loss = 0.9641, Disc Loss = 1.1282, Time = 21.99s
+2026-06-19 23:53:47 [INFO] QGAN Generation Quality (1-TVD): 0.740 (TVD=0.260, KL=0.166); Final Loss: 1.0945, Time: 27.51s
+2026-06-19 23:53:48 [INFO] Saved figure: results/qgan_training_gpu.png
+2026-06-19 23:53:48 [INFO] ============================================================
+2026-06-19 23:53:48 [INFO] Testing on IBM_QUANTUM_PLATFORM backend
+2026-06-19 23:53:48 [INFO] ============================================================
+2026-06-19 23:53:48 [INFO] Available IBM backends: ['ibm_fez', 'ibm_marrakesh', 'ibm_kingston']
+2026-06-19 23:53:51 [INFO] IBM Quantum Backend: ibm_fez
+2026-06-19 23:53:51 [INFO]   Pending jobs in queue: 0
+2026-06-19 23:53:52 [WARNING] Could not open Session ('400 Client Error: Bad Request for url: https://quantum.cloud.ibm.com/api/v1/sessions. {"errors":[{"code":1352,"message":"You are not authorized to run a session when using the open plan.","solution":"Create an instance of a different plan type or use a different [execution mode](https://quantum.cloud.ibm.com/docs/guides/execution-modes).","more_info":"https://cloud.ibm.com/apidocs/quantum-computing#error-handling"}],"trace":"606fdb92-59a4-4dea-9f48-45a4f86bd53a"}\n'); using job mode
+2026-06-19 23:53:53 [INFO] === Training VQC on ibm_quantum_platform ===
+2026-06-19 23:53:53 [INFO] Training VQC on hardware with a reduced subset of 8 samples
+2026-06-19 23:55:52 [INFO] VQC Accuracy: 0.600, Time: 57.91s
+2026-06-19 23:55:52 [INFO] Saved figure: results/vqc_circuit_ibm_quantum_platform.png
+2026-06-19 23:55:52 [INFO] === Training QSVM on ibm_quantum_platform ===
+2026-06-19 23:55:52 [INFO] Training QSVM on hardware with a reduced subset of 8 samples
+2026-06-20 00:03:17 [INFO] QSVM Accuracy: 0.675, Time: 42.93s
+2026-06-20 00:03:17 [INFO] Skipping QNN on hardware (not in CONFIG['ibm_models'])
+2026-06-20 00:03:17 [INFO] Skipping QCNN on hardware (not in CONFIG['ibm_models'])
+2026-06-20 00:03:17 [INFO] Skipping QRNN on hardware (not in CONFIG['ibm_models'])
+2026-06-20 00:03:17 [INFO] Skipping QGAN on hardware (not in CONFIG['ibm_models'])
+2026-06-20 00:03:18 [INFO] Saved figure: results/quantum_ml_comparison_detailed.png
+2026-06-20 00:03:18 [INFO] ================================================================================
+2026-06-20 00:03:18 [INFO] DETAILED SUMMARY OF RESULTS
+2026-06-20 00:03:18 [INFO] ================================================================================
+2026-06-20 00:03:18 [INFO]              Backend Model Accuracy Training Time (s) Iterations Final Loss
+2026-06-20 00:03:18 [INFO]                  cpu   VQC    0.500             11.25         48        N/A
+2026-06-20 00:03:18 [INFO]                  cpu  QSVM    0.850              9.38        N/A        N/A
+2026-06-20 00:03:18 [INFO]                  cpu   QNN    0.450              0.72          6        N/A
+2026-06-20 00:03:18 [INFO]                  cpu  QCNN    0.225              0.43          3        N/A
+2026-06-20 00:03:18 [INFO]                  cpu  QRNN    0.275              0.50          3        N/A
+2026-06-20 00:03:18 [INFO]                  cpu  QGAN    0.789             19.15        N/A     0.8170
+2026-06-20 00:03:18 [INFO]                  gpu   VQC    0.825             18.13         48        N/A
+2026-06-20 00:03:18 [INFO]                  gpu  QSVM    0.875             23.67        N/A        N/A
+2026-06-20 00:03:18 [INFO]                  gpu   QNN    0.275              2.67          6        N/A
+2026-06-20 00:03:18 [INFO]                  gpu  QCNN    0.275              2.00          3        N/A
+2026-06-20 00:03:18 [INFO]                  gpu  QRNN    0.250              1.77          3        N/A
+2026-06-20 00:03:18 [INFO]                  gpu  QGAN    0.740             27.51        N/A     1.0945
+2026-06-20 00:03:18 [INFO] ibm_quantum_platform   VQC    0.600             57.91          1        N/A
+2026-06-20 00:03:18 [INFO] ibm_quantum_platform  QSVM    0.675             42.93        N/A        N/A
+2026-06-20 00:03:18 [INFO] ibm_quantum_platform   QNN      N/A               N/A        N/A        N/A
+2026-06-20 00:03:18 [INFO] ibm_quantum_platform  QCNN      N/A               N/A        N/A        N/A
+2026-06-20 00:03:18 [INFO] ibm_quantum_platform  QRNN      N/A               N/A        N/A        N/A
+2026-06-20 00:03:18 [INFO] ibm_quantum_platform  QGAN      N/A               N/A        N/A        N/A
+2026-06-20 00:03:18 [INFO] Note: for QGAN, 'Accuracy' is the generation-quality score = 1 - TVD(generated, target) in [0,1] (higher is better); see quality_score / tvd / kl_divergence in quantum_ml_results.json.
+2026-06-20 00:03:18 [INFO] Saved summary table: results/summary.csv, results/summary.txt
+2026-06-20 00:03:18 [INFO] ================================================================================
+2026-06-20 00:03:18 [INFO] PERFORMANCE COMPARISON
+2026-06-20 00:03:18 [INFO] ================================================================================
+2026-06-20 00:03:18 [INFO] GPU Speedup vs CPU:
+2026-06-20 00:03:18 [INFO]   VQC: 0.62x
+2026-06-20 00:03:18 [INFO]   QSVM: 0.40x
+2026-06-20 00:03:18 [INFO]   QNN: 0.27x
+2026-06-20 00:03:18 [INFO]   QCNN: 0.22x
+2026-06-20 00:03:18 [INFO]   QRNN: 0.28x
+2026-06-20 00:03:18 [INFO] Results saved to results/quantum_ml_results.json
+2026-06-20 00:03:18 [INFO] Execution completed at: 2026-06-20 00:03:18
+2026-06-20 00:03:18 [INFO] All artifacts written to: /home/a-koike/dev/github/benchmark_qiskit_v2_ml/qml_benckmark_qiskit_v2/results
